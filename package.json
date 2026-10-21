@@ -1,0 +1,62 @@
+{
+  "name": "feiyu-bili-studio",
+  "version": "0.2.0",
+  "description": "DSH 设置页里的「B站创作台」—— 独立扫码登录（不跟刷B站共用凭证）、生成视频、投稿到 B站",
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "bilibili",
+    "video"
+  ],
+  "license": "MIT",
+  "type": "module",
+  "main": "index.js",
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./package.json": "./package.json"
+  },
+  "engines": {
+    "dsh": ">=0.1.7-rc.1",
+    "node": ">=22"
+  },
+  "peerDependencies": {
+    "@deepseek-ai/dsh-tools": "*"
+  },
+  "peerDependenciesMeta": {
+    "@deepseek-ai/dsh-tools": {
+      "optional": true
+    }
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "inject": [
+        "@deepseek-ai/dsh-client-runtime",
+        "@deepseek-ai/dsh-client-ui-settings"
+      ]
+    }
+  },
+  "author": "tianding123",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tianding123/feiyu-bili-studio.git"
+  },
+  "homepage": "https://github.com/tianding123/feiyu-bili-studio#readme",
+  "bugs": {
+    "url": "https://github.com/tianding123/feiyu-bili-studio/issues"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "cordis.patch.yml",
+    "lib",
+    "vendor",
+    "README.md",
+    "LICENSE"
+  ]
+}
